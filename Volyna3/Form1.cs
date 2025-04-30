@@ -28,26 +28,82 @@ namespace Volyna3
 
                     if (double.TryParse(textBoxHeight.Text, out double height))
                     {
-                        currentVehicle["Height"] = Convert.ToDouble(textBoxHeight.Text);
+                        if(height >= 50 && height <= 10000)
+                        {
+                            currentVehicle["Height"] = Convert.ToDouble(textBoxHeight.Text);
+                        } else
+                        {
+                            MessageBox.Show("Height must be in [50; 10000] range", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            allOK = false;
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Будь ласка, введіть коректну висоту літака (число).", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please enter the correct aircraft (number).", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         allOK = false;
                     }
 
                     if (int.TryParse(textBoxPassengers.Text, out int passengers))
                     {
-                        currentVehicle["Passengers"] = Convert.ToInt32(textBoxPassengers.Text);
+                        if (passengers >= 0 && passengers < 850)
+                        {
+                            currentVehicle["Passengers"] = Convert.ToInt32(textBoxPassengers.Text);
+
+                        } else
+                        {
+                            MessageBox.Show("Please enter the correct value [0; 850]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            allOK = false;
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Будь ласка, введіть кількість пасажирів (ціле число).", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please enter the number of passengers (integer)", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         allOK = false;
                     }
+                    if (double.TryParse(textBoxSpeed.Text, out double speed))
+                    {
+                        if (speed >= 0 && speed < 3500)
+                        {
+                            currentVehicle["Speed"] = speed;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter the correct value [0; 3500]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            allOK = false;
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter the correct speed (number).", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        allOK = false;
+
+                    }
+
                     break;
                 case "Car":
                     currentVehicle = new Car();
+                    if (double.TryParse(textBoxSpeed.Text, out double speed1))
+                    {
+                        if (speed1 >= 0 && speed1 < 500)
+                        {
+                            currentVehicle["Speed"] = speed1;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter the correct value [0; 500]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            allOK = false;
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter the correct speed (number).", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        allOK = false;
+
+                    }
                     break;
                 case "Ship":
                     currentVehicle = new Ship();
@@ -58,18 +114,47 @@ namespace Volyna3
                     }
                     else
                     {
-                        MessageBox.Show("Будь ласка, введіть порт приписки для корабля.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please enter the home port for the ship.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         allOK = false;
                     }
 
                     if (int.TryParse(textBoxPassengers.Text, out int passengersShip))
                     {
-                        currentVehicle["Passengers"] = Convert.ToInt32(textBoxPassengers.Text);
+                        if (passengersShip >= 0 && passengersShip < 6500)
+                        {
+                            currentVehicle["Passengers"] = Convert.ToInt32(textBoxPassengers.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter the correct value [0; 6500]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            allOK = false;
+
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("Будь ласка, введіть кількість пасажирів (ціле число).", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please enter the number of passengers.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         allOK = false;
+                    }
+                    if (double.TryParse(textBoxSpeed.Text, out double speed2))
+                    {
+                        if (speed2 >= 0 && speed2 < 40)
+                        {
+                            currentVehicle["Speed"] = speed2;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter the correct value [0; 40]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            allOK = false;
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter the correct speed (number).", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        allOK = false;
+
                     }
 
                     break;
@@ -81,26 +166,41 @@ namespace Volyna3
 
             if (double.TryParse(textBoxPrice.Text, out double price))
             {
-                currentVehicle["Price"] = Convert.ToDouble(textBoxPrice.Text);
+                if (price >= 0 && price < 1000000)
+                {
+                    currentVehicle["Price"] = Convert.ToDouble(textBoxPrice.Text);
+
+                }
+                else
+                {
+                    MessageBox.Show("Please enter the correct value [0; 1000000]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    allOK = false;
+                }
 
             }
             else
             {
-                MessageBox.Show("Будь ласка, введіть коректну ціну (число).", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the correct price (number).", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 allOK = false;
             }
 
-            if (double.TryParse(textBoxSpeed.Text, out double speed))
-            {
-                currentVehicle["Speed"] = speed;
+            //if (double.TryParse(textBoxSpeed.Text, out double speed))
+            //{
+            //    if (speed >= 0 && speed < 3500)
+            //    {
+            //        currentVehicle["Speed"] = speed;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Please enter the correct value [0; 3500]", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please enter the correct price (number).Please enter the correct speed (number).", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    allOK = false;
 
-            }
-            else
-            {
-                MessageBox.Show("Будь ласка, введіть коректну швидкість (число).", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                allOK = false;
-
-            }
+            //}
 
             if (int.TryParse(textBoxYear.Text, out int year))
             {
@@ -111,14 +211,14 @@ namespace Volyna3
                 }
                 else
                 {
-                    MessageBox.Show("Рік має бути між 1900 і 2025.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Рік має бути між 1900 і 2025.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     allOK = false;
 
                 }
             }
             else
             {
-                MessageBox.Show("Будь ласка, введіть коректний рік (ціле число).", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the correct year.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 allOK = false;
             }
 

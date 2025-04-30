@@ -113,7 +113,7 @@
             listBoxOutput.FormattingEnabled = true;
             listBoxOutput.Location = new Point(448, 13);
             listBoxOutput.Name = "listBoxOutput";
-            listBoxOutput.Size = new Size(498, 384);
+            listBoxOutput.Size = new Size(534, 384);
             listBoxOutput.TabIndex = 9;
             listBoxOutput.Click += listBoxOutput_Click;
             // 
@@ -184,7 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(958, 411);
+            ClientSize = new Size(994, 411);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -201,6 +201,9 @@
             Controls.Add(textBoxSpeed);
             Controls.Add(textBoxPrice);
             Controls.Add(comboBoxType);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
