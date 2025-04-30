@@ -36,7 +36,6 @@
             textBoxPassengers = new TextBox();
             textBoxPort = new TextBox();
             buttonCreate = new Button();
-            buttonShow = new Button();
             listBoxOutput = new ListBox();
             Vehicle = new Label();
             label2 = new Label();
@@ -109,22 +108,12 @@
             buttonCreate.UseVisualStyleBackColor = true;
             buttonCreate.Click += buttonCreate_Click;
             // 
-            // buttonShow
-            // 
-            buttonShow.Location = new Point(165, 340);
-            buttonShow.Name = "buttonShow";
-            buttonShow.Size = new Size(94, 29);
-            buttonShow.TabIndex = 8;
-            buttonShow.Text = "Show";
-            buttonShow.UseVisualStyleBackColor = true;
-            buttonShow.Click += buttonShow_Click;
-            // 
             // listBoxOutput
             // 
             listBoxOutput.FormattingEnabled = true;
-            listBoxOutput.Location = new Point(448, 53);
+            listBoxOutput.Location = new Point(448, 13);
             listBoxOutput.Name = "listBoxOutput";
-            listBoxOutput.Size = new Size(498, 244);
+            listBoxOutput.Size = new Size(498, 384);
             listBoxOutput.TabIndex = 9;
             listBoxOutput.Click += listBoxOutput_Click;
             // 
@@ -204,7 +193,6 @@
             Controls.Add(label2);
             Controls.Add(Vehicle);
             Controls.Add(listBoxOutput);
-            Controls.Add(buttonShow);
             Controls.Add(buttonCreate);
             Controls.Add(textBoxPort);
             Controls.Add(textBoxPassengers);
@@ -230,7 +218,6 @@
         private TextBox textBoxPassengers;
         private TextBox textBoxPort;
         private Button buttonCreate;
-        private Button buttonShow;
         private ListBox listBoxOutput;
         private Label Vehicle;
         private Label label2;

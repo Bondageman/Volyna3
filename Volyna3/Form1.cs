@@ -92,7 +92,7 @@ namespace Volyna3
 
             if (double.TryParse(textBoxSpeed.Text, out double speed))
             {
-                currentVehicle["Speed"] = Convert.ToDouble(textBoxSpeed.Text);
+                currentVehicle["Speed"] = speed;
 
             }
             else
@@ -104,7 +104,17 @@ namespace Volyna3
 
             if (int.TryParse(textBoxYear.Text, out int year))
             {
-                currentVehicle["Year"] = Convert.ToInt32(textBoxYear.Text);
+                if (year >= 1900 && year <= 2025)
+                {
+                    currentVehicle["Year"] = year; 
+
+                }
+                else
+                {
+                    MessageBox.Show("Ğ³ê ìàº áóòè ì³æ 1900 ³ 2025.", "Ïîìèëêà", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    allOK = false;
+
+                }
             }
             else
             {
@@ -118,12 +128,13 @@ namespace Volyna3
             if (allOK)
             {
                 MessageBox.Show("Vehicle created!");
+                if (currentVehicle != null)
+                    listBoxOutput.Items.Add(currentVehicle.GetInfo());
+                else
+                    MessageBox.Show("No vehicle created.");
 
             }
-            if (currentVehicle != null)
-                listBoxOutput.Items.Add(currentVehicle.GetInfo());
-            else
-                MessageBox.Show("No vehicle created.");
+            
         }
 
         private void buttonShow_Click(object sender, EventArgs e)

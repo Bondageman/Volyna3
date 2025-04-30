@@ -17,7 +17,7 @@ namespace Volyna3
 
         public override string GetInfo()
         {
-            return $"Car: {properties["Price"]}$, {properties["Speed"]}km/h, Year: {properties["Year"]}";
+            return $"Car: {properties["Price"]}$, Speed: {properties["Speed"]}km/h, Year: {properties["Year"]}";
         }
     }
 }

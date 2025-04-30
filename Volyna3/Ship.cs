@@ -19,7 +19,7 @@ namespace Volyna3
 
         public override string GetInfo()
         {
-            return $"Ship: {properties["Price"]}$, {properties["Speed"]}km/h, Year: {properties["Year"]}, " +
+            return $"Ship: {properties["Price"]}$, Speed: {properties["Speed"]}km/h, Year: {properties["Year"]}, " +
                    $"Port: {properties["Port"]}, Passengers: {properties["Passengers"]}";
         }
     }
